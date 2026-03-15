@@ -1,0 +1,33 @@
+<div id="intro-overlay" class="intro-overlay" aria-hidden="true">
+  <video id="intro-video" muted playsinline>
+    <source src="/videos/intro-dog.mp4" type="video/mp4">
+  </video>
+  <button id="intro-skip" class="intro-skip" aria-label="Skip intro animation">Skip</button>
+</div>
+<script>
+(function() {
+  var overlay = document.getElementById('intro-overlay');
+  var video = document.getElementById('intro-video');
+  var skipBtn = document.getElementById('intro-skip');
+
+  if (localStorage.getItem('hasSeenIntro')) {
+    overlay.remove();
+    return;
+  }
+
+  overlay.style.display = '';
+  overlay.setAttribute('aria-hidden', 'false');
+  video.play();
+
+  function dismiss() {
+    overlay.classList.add('intro-fade-out');
+    overlay.addEventListener('transitionend', function() {
+      overlay.remove();
+    });
+    localStorage.setItem('hasSeenIntro', 'true');
+  }
+
+  video.addEventListener('ended', dismiss);
+  skipBtn.addEventListener('click', dismiss);
+})();
+</script>

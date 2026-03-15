@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
+
+{% block content %}
+<section class="section-page resume-page">
+  <div class="resume-header">
+    <h1>{{ section.title }}</h1>
+    <a href="/files/resume.pdf" class="btn btn-primary" download>Download PDF</a>
+  </div>
+  <div class="resume-content">
+    {{ section.content | safe }}
+  </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,19 @@
+<a href="{{ page.permalink }}" class="card">
+  {% if page.extra.thumbnail %}
+  <div class="card-thumbnail">
+    <img src="{{ page.extra.thumbnail }}" alt="{{ page.title }}" loading="lazy">
+  </div>
+  {% endif %}
+  <div class="card-body">
+    <h3 class="card-title">{{ page.title }}</h3>
+    {% if page.extra.client %}
+    <span class="card-client">{{ page.extra.client }}</span>
+    {% endif %}
+    {% if page.extra.methodology %}
+    <span class="card-tag">{{ page.extra.methodology }}</span>
+    {% endif %}
+    {% if page.extra.summary %}
+    <p class="card-summary">{{ page.extra.summary }}</p>
+    {% endif %}
+  </div>
+</a>

@@ -1,0 +1,17 @@
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.site-main {
+  min-height: calc(100vh - #{$nav-height} - 100px);
+  padding-top: $nav-height;
+}
+
+.section-page,
+.page-content {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md;
+}

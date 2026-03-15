@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "partials/head.html" %}
+</head>
+<body>
+  {% include "partials/nav.html" %}
+  <main class="site-main">
+    {% block content %}{% endblock content %}
+  </main>
+  {% include "partials/footer.html" %}
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const menu = document.querySelector('.nav-menu');
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('is-open');
+    });
+  </script>
+  {% block scripts %}{% endblock scripts %}
+</body>
+</html>

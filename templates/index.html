@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }}{% endblock title %}
+
+{% block content %}
+{% include "partials/intro-overlay.html" %}
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-photo">
+      <img src="{{ get_url(path='images/home/headshot.avif') }}" alt="Amor Manzanares" />
+    </div>
+    <div class="hero-text">
+      <h1>Fast when needed. In-depth when it matters.</h1>
+      <p>Senior UX professional shaping product experiences through research, strategy, and design thinking. I help teams uncover user insights, translate them into clear product opportunities, and drive smarter decisions that improve usability, alignment, and business impact.</p>
+    </div>
+  </div>
+</section>
+
+<section class="nav-circles">
+  <div class="container">
+    <div class="circles-row">
+      <a href="{{ get_url(path='@/research/_index.md') }}" class="circle-link">Research</a>
+      <a href="{{ get_url(path='@/design/_index.md') }}" class="circle-link">Design</a>
+      <a href="{{ get_url(path='@/about/_index.md') }}" class="circle-link">About Me</a>
+    </div>
+  </div>
+</section>
+
+<section class="brands-ticker">
+  <div class="container">
+    <h2>Brands I've Supported</h2>
+  </div>
+  <div class="ticker-wrapper">
+    <div class="ticker-track">
+      <img src="{{ get_url(path='images/brands/material-plus.png') }}" alt="Material+" />
+      <img src="{{ get_url(path='images/brands/ascent.png') }}" alt="Ascent" />
+      <img src="{{ get_url(path='images/brands/verizon.png') }}" alt="Verizon" />
+      <img src="{{ get_url(path='images/brands/material-plus.png') }}" alt="Material+" />
+      <img src="{{ get_url(path='images/brands/ascent.png') }}" alt="Ascent" />
+      <img src="{{ get_url(path='images/brands/verizon.png') }}" alt="Verizon" />
+    </div>
+  </div>
+</section>
+{% endblock content %}

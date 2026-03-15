@@ -1,0 +1,12 @@
+base_url = "https://amormanz.com"
+title = "Amor Manzanares | UX Portfolio"
+description = "UX Research & Design Portfolio of Amor Manzanares"
+compile_sass = true
+minify_html = true
+generate_feeds = false
+
+
+[extra]
+author = "Amor Manzanares"
+email = "amormanzanares@gmail.com"
+linkedin = "https://www.linkedin.com/in/amor-m-3b8a19112/"

@@ -1,0 +1,53 @@
+.resume-page {
+  .resume-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+
+  .resume-content {
+    h2 {
+      margin-top: $spacing-md;
+      margin-bottom: $spacing-sm;
+      padding-bottom: $spacing-xs;
+      border-bottom: 1px solid $color-border;
+    }
+
+    h3 {
+      margin-top: $spacing-sm;
+      margin-bottom: $spacing-xs;
+    }
+
+    p {
+      margin-bottom: $spacing-xs;
+    }
+
+    ul {
+      margin-bottom: $spacing-sm;
+      padding-left: $spacing-md;
+      list-style: disc;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background: $color-primary;
+  color: $color-bg;
+
+  &:hover {
+    background: $color-secondary;
+  }
+}

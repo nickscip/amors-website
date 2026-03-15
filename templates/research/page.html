@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock title %}
+
+{% block content %}
+<article class="case-study">
+  <header class="case-study-hero">
+    {% if page.extra.thumbnail %}
+    <img src="{{ page.extra.thumbnail }}" alt="{{ page.title }}" class="case-study-hero-img">
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.extra.summary %}
+    <p class="case-study-subtitle">{{ page.extra.summary }}</p>
+    {% endif %}
+  </header>
+
+  <div class="case-study-layout">
+    <aside class="case-study-meta">
+      {% if page.extra.client %}
+      <div class="meta-item">
+        <span class="meta-label">Client</span>
+        <span class="meta-value">{{ page.extra.client }}</span>
+      </div>
+      {% endif %}
+      {% if page.extra.role %}
+      <div class="meta-item">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">{{ page.extra.role }}</span>
+      </div>
+      {% endif %}
+      {% if page.extra.methodology %}
+      <div class="meta-item">
+        <span class="meta-label">Methodology</span>
+        <span class="meta-value">{{ page.extra.methodology }}</span>
+      </div>
+      {% endif %}
+    </aside>
+
+    <div class="case-study-body">
+      {{ page.content | safe }}
+    </div>
+  </div>
+</article>
+{% endblock content %}

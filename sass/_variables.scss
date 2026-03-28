@@ -1,4 +1,4 @@
-// Colors
+// Colors (legacy - used by non-home pages)
 $color-primary: #222222;
 $color-secondary: #16213e;
 $color-accent: #8a9a8e;
@@ -9,9 +9,19 @@ $color-text: #333333;
 $color-text-light: #666666;
 $color-border: #e0e0e0;
 
+// Colors (new palette)
+$color-cream: #FFF8E8;
+$color-deep-brown: #4F3627;
+$color-olive: #54561A;
+$color-burnt-orange: #9C441F;
+$color-golden: #F8CA00;
+$color-placeholder: #D9D9D9;
+
 // Typography
 $font-heading: 'Georgia', serif;
 $font-body: 'Helvetica Neue', Arial, sans-serif;
+$font-display: 'forager', Georgia, serif;
+$font-condensed: 'Arial Narrow', Helvetica, sans-serif;
 $font-size-base: 16px;
 $line-height-base: 1.6;
 
@@ -31,3 +41,5 @@ $bp-wide: 1440px;
 // Layout
 $max-width: 1200px;
 $nav-height: 70px;
+$nav-height-new: 89px;
+$card-radius: 25px;

@@ -3,43 +3,157 @@
 {% block title %}{{ config.title }}{% endblock title %}
 
 {% block content %}
-{% include "partials/intro-overlay.html" %}
 
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-grid">
+  <div class="hero-container">
     <div class="hero-photo">
       <img src="{{ get_url(path='images/home/headshot.avif') }}" alt="Amor Manzanares" />
     </div>
     <div class="hero-text">
-      <h1>Fast when needed. In-depth when it matters.</h1>
-      <p>Senior UX professional shaping product experiences through research, strategy, and design thinking. I help teams uncover user insights, translate them into clear product opportunities, and drive smarter decisions that improve usability, alignment, and business impact.</p>
+      <h1>Just a human understanding humans.</h1>
+      <p>Senior UX professional shaping product experiences through research, strategy, and design thinking. I help teams uncover user insights, translate them into clear product and design opportunities, and drive smarter decisions that improve usability, alignment, and business impact.</p>
     </div>
   </div>
 </section>
 
-<section class="nav-circles">
-  <div class="container">
-    <div class="circles-row">
-      <a href="{{ get_url(path='@/research/_index.md') }}" class="circle-link">Research</a>
-      <a href="{{ get_url(path='@/design/_index.md') }}" class="circle-link">Design</a>
-      <a href="{{ get_url(path='@/about/_index.md') }}" class="circle-link">About Me</a>
+<!-- Work Cards -->
+<section class="work-section">
+  <div class="work-container">
+    <h2>Work</h2>
+    <div class="work-cards">
+      <div class="work-card">
+        <div class="work-card__icon">
+          <img src="{{ get_url(path='images/home/icon-research.png') }}" alt="" />
+        </div>
+        <div class="work-card__body">
+          <h3>Research</h3>
+          <p>This research portfolio showcases my UX research process. Each study demonstrates the impact of user insights on product decisions, and reflects evolution of my approach to research.</p>
+          <a href="{{ get_url(path='@/research/_index.md') }}" class="btn-cta">View Research Work</a>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-card__icon">
+          <img src="{{ get_url(path='images/home/icon-design.png') }}" alt="" />
+        </div>
+        <div class="work-card__body">
+          <h3>Design</h3>
+          <p>This design portfolio highlights my approach to user-centered design and problem-solving. Explore how I apply design thinking to tackle challenges, explore ideas, and create thoughtful solutions.</p>
+          <a href="{{ get_url(path='@/design/_index.md') }}" class="btn-cta">View Design Work</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="brands-ticker">
-  <div class="container">
+<!-- Brands -->
+<section class="brands-section">
+  <div class="brands-container">
     <h2>Brands I've Supported</h2>
-  </div>
-  <div class="ticker-wrapper">
-    <div class="ticker-track">
-      <img src="{{ get_url(path='images/brands/material-plus.png') }}" alt="Material+" />
-      <img src="{{ get_url(path='images/brands/ascent.png') }}" alt="Ascent" />
-      <img src="{{ get_url(path='images/brands/verizon.png') }}" alt="Verizon" />
-      <img src="{{ get_url(path='images/brands/material-plus.png') }}" alt="Material+" />
-      <img src="{{ get_url(path='images/brands/ascent.png') }}" alt="Ascent" />
-      <img src="{{ get_url(path='images/brands/verizon.png') }}" alt="Verizon" />
+    <div class="brands-row">
+      <img src="{{ get_url(path='images/brands/ascent.svg') }}" alt="Ascent Global Logistics" class="brand-logo" />
+      <img src="{{ get_url(path='images/brands/verizon.svg') }}" alt="Verizon" class="brand-logo" />
+      <img src="{{ get_url(path='images/brands/meta.svg') }}" alt="Meta" class="brand-logo" />
     </div>
   </div>
 </section>
+
+<!-- References -->
+<section class="references-section">
+  <div class="references-container">
+    <h2>References</h2>
+    <div class="references-cards">
+
+      <div class="ref-card">
+        <blockquote>
+          <p>I directly managed Amor at Verizon, where she was the lead researcher for one of our largest research portfolios. To summarize my experience with her - Amor is the person you want on your team. Amor did it all, and she did it well. She leveraged her strong organizational skills to efficiently triage incoming research requests by business priority, timeline, and scope. From there, she executed each research study while consistently delivering high quality, detailed, insights. She also tracked research opportunities and was able to ensure on-going research aligned with team roadmaps and goals. Even when said roadmaps and goals unexpectedly changed. I frequently gave Amor high visibility projects and more complex research studies because I was confident in her ability to rise to the challenge. She is a critical asset to any team lucky enough to have her.</p>
+        </blockquote>
+        <div class="ref-card__author">
+          <div class="ref-card__photo"></div>
+          <div class="ref-card__info">
+            <span class="ref-card__name">Amanda Kass</span>
+            <span class="ref-card__title">Associate Director UX Research - Verizon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-card">
+        <blockquote>
+          <p>Amor has been a pleasure to work with. She has been a trusted partner for me and for the teams she has supported. She has a calm, reassuring demeanor in her guidance of designers and stakeholders to develop research goals and plans... In addition to her skills in crafting, performing, and summarizing research, Amor is also well organized, and through regular consultation with stakeholders and team members was able to maintain a research roadmap and cadence that helped everyone have realistic expectations of research capacity and scheduling. This helped keep the research flowing smoothly and insured that teams with tight deadlines were aware of when to ask for and expect research findings.</p>
+        </blockquote>
+        <div class="ref-card__author">
+          <div class="ref-card__photo"></div>
+          <div class="ref-card__info">
+            <span class="ref-card__name">David Bixby</span>
+            <span class="ref-card__title">Principal Experience Designer - Verizon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-card">
+        <blockquote>
+          <p>Amor is a fantastic UX Researcher, and a great addition to any design team. She approaches every meeting with fresh ideas, a great work ethic, and a positive attitude. She is amazing at conducting user interviews due to her eloquence and her empathy. Furthermore, Amor prioritizes innovation and continually works to educate herself on the developments in the field. I had the pleasure of working with Amor at Ascent Global Logistics in a highly collaborative environment so I experienced her UX skills firsthand. Anyone would be lucky to work alongside Amor!</p>
+        </blockquote>
+        <div class="ref-card__author">
+          <div class="ref-card__photo"></div>
+          <div class="ref-card__info">
+            <span class="ref-card__name">Stephanie Nikolas</span>
+            <span class="ref-card__title">Product Designer - Ascent Global Logistics</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- More Fun -->
+<section class="more-section">
+  <div class="more-container">
+    <h2>More Fun</h2>
+    <div class="more-cards">
+
+      <a href="#" class="more-card">
+        <div class="more-card__arch">
+          {% include "partials/svg/arch-shape.html" %}
+        </div>
+        <div class="more-card__info">
+          <div class="more-card__text">
+            <h3>Blog</h3>
+            <p>research, design, and everything else in my noggin.</p>
+          </div>
+          {% include "partials/svg/icon-arrow.html" %}
+        </div>
+      </a>
+
+      <a href="#" class="more-card">
+        <div class="more-card__arch">
+          {% include "partials/svg/arch-shape.html" %}
+        </div>
+        <div class="more-card__info">
+          <div class="more-card__text">
+            <h3>Art</h3>
+            <p>View some of the physical artwork &amp; crafts I have made.</p>
+          </div>
+          {% include "partials/svg/icon-arrow.html" %}
+        </div>
+      </a>
+
+      <a href="{{ get_url(path='@/about/_index.md') }}" class="more-card">
+        <div class="more-card__arch">
+          {% include "partials/svg/arch-shape.html" %}
+        </div>
+        <div class="more-card__info">
+          <div class="more-card__text">
+            <h3>About Me</h3>
+            <p>Learn more about yours truly and why I'm great.</p>
+          </div>
+          {% include "partials/svg/icon-arrow.html" %}
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 {% endblock content %}

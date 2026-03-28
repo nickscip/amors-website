@@ -4,16 +4,24 @@
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span class="hamburger"></span>
     </button>
-    <ul class="nav-menu">
-      <li class="nav-item">
-        <a href="{{ get_url(path='@/research/_index.md') }}">Research</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ get_url(path='@/design/_index.md') }}">Design</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ get_url(path='@/about/_index.md') }}">About</a>
-      </li>
-    </ul>
+    <div class="nav-menu">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="{{ get_url(path='/') }}" class="nav-link">Home</a></li>
+        <li class="nav-item nav-item--dropdown">
+          <a href="#" class="nav-link">Work</a>
+          <ul class="nav-dropdown">
+            {% set research = get_section(path="research/_index.md") %}
+            <li><a href="{{ get_url(path='@/research/_index.md') }}">Research</a></li>
+            {% set design = get_section(path="design/_index.md") %}
+            <li><a href="{{ get_url(path='@/design/_index.md') }}">Design</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link">More</a></li>
+        <li class="nav-item"><a href="{{ get_url(path='@/about/_index.md') }}" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-search" aria-label="Search">
+        {% include "partials/svg/icon-search.html" %}
+      </button>
+    </div>
   </div>
 </nav>

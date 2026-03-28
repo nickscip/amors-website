@@ -3,15 +3,63 @@
 {% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
 
 {% block content %}
-<section class="section-page about-page">
-  <div class="about-layout">
-    <div class="about-photo">
-      <img src="/images/about/headshot.jpg" alt="{{ config.extra.author }}" loading="lazy">
+<div class="about-page">
+
+  <header class="about-header">
+    <h1>About</h1>
+    <p>On this page you'll learn a little about where I come from, how anthropology led me into UX, and why I care so much about building products that actually make sense for the people using them. I'll also share a few hobbies that keep my brain happy when I'm not thinking about product problems.</p>
+  </header>
+
+  <section class="about-block about-block--img-left">
+    <div class="about-block__image">
+      <img src="{{ get_url(path='images/about/chili-peppers.avif') }}" alt="New Mexico chili peppers" loading="lazy" />
     </div>
-    <div class="about-content">
-      <h1>{{ section.title }}</h1>
-      {{ section.content | safe }}
+    <div class="about-block__text">
+      <h2>Early Beginnings</h2>
+      <p>I was born in Las Vegas, New Mexico, raised in Las Vegas, Nevada, and now live in Austin, Texas. Confusing? A little. But my heart has always belonged to New Mexico.</p>
+      <p>As a proud Nuevomexicana, I grew up surrounded by deep history, strong cultural traditions, and people who are very good at telling stories. That environment made me curious early on about how culture shapes the way people see the world, why people value certain things, why language matters and why context changes everything.</p>
+      <p>That curiosity of understanding people's perspectives, motivations, and environments ended up following me straight into UX.</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="about-block about-block--img-right">
+    <div class="about-block__text">
+      <h2>Anthropologist At Heart</h2>
+      <p>In college I studied anthropology, focusing on cultural and linguistic anthropology. A lot of that work centered on how people construct meaning and how language shapes the way we experience the world. Language and culture has always fascinated me because it reveals how people think. The words people choose and their background often say more than they realize.</p>
+      <p>I've traveled to seven countries so far and I'm always trying to pick up new languages along the way. I currently speak Spanish at an advanced level (B2&ndash;C1) and continue studying it regularly. It's also allowed me to comfortably run conversations and interviews with Spanish-speaking participants, which has been incredibly valuable in research. I've also studied French, Mandarin, and Korean at different points, and I genuinely enjoy learning how different cultures communicate and express ideas.</p>
+      <p>At some point I started looking at technology the same way anthropologists look at culture. Digital products shape behavior. They influence decisions, guide habits, and sometimes confuse people in very creative ways.</p>
+      <p>That curiosity eventually pulled me into UX, where I get to combine anthropological thinking, behavioral insight, and product strategy to help teams design experiences that actually work for humans.</p>
+    </div>
+    <div class="about-block__image">
+      <img src="{{ get_url(path='images/about/pyramid.avif') }}" alt="Pyramid stairs" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="about-block about-block--img-left">
+    <div class="about-block__image">
+      <img src="{{ get_url(path='images/about/portrait.avif') }}" alt="Amor Manzanares portrait" loading="lazy" />
+    </div>
+    <div class="about-block__text">
+      <h2>UX Journey</h2>
+      <p>My path into UX started about four years ago when I completed the Google UX Design Certificate, where I built a foundation in both design thinking and user research.</p>
+      <p>Soon after, I became the first UX Research Intern at Ascent Global Logistics. Although the role was research-focused, I spent a large portion of my time contributing to design work as well. Because the UX function was still developing, I collaborated closely with product and engineering teams and often helped create wireframes, flows, and early product concepts.</p>
+      <p>After that, I joined Verizon's Rapid Research team, where I ran fast-paced, agile research studies supporting product teams across the company. This role strengthened my ability to quickly uncover insights and deliver findings that could immediately inform product decisions.</p>
+      <p>Later, I was promoted to Portfolio Researcher and then Portfolio Research Lead for Verizon's Support organization. Being embedded within a specific product portfolio meant I was more involved in the product development process from discovery through launch. While research remained my primary focus, I also collaborated closely with designers and regularly contributed to design work for several major launches within the support experience.</p>
+      <p>Today my work sits at the intersection of research, design thinking, and product strategy, helping teams translate user insights into better product decisions.</p>
+    </div>
+  </section>
+
+  <section class="about-block about-block--img-right">
+    <div class="about-block__text">
+      <h2>Outside of UXR</h2>
+      <p>When I'm not thinking about product problems, I'm usually deep into one of my many hobbies.</p>
+      <p>I love weightlifting, hiking, painting, gardening, cooking, and playing board games. I also spend a lot of my free time crafting. Lately that has included things like New Mexican tinwork, crocheting, sewing, jewelry making, and beading. I enjoy working with my hands and creating things from scratch. It's a nice break from staring at screens all day.</p>
+      <p>I also dog sit pretty frequently, which means there's almost always a dog somewhere in my apartment. My favorite dog though is my dog Squid. He's my best friend and a very supportive research and design assistant (even though he still hasn't figured out how to read interview transcripts YET).</p>
+    </div>
+    <div class="about-block__image">
+      <img src="{{ get_url(path='images/about/squid.avif') }}" alt="Squid the dog" loading="lazy" />
+    </div>
+  </section>
+
+</div>
 {% endblock content %}

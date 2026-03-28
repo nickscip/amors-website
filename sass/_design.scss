@@ -1,15 +1,228 @@
-.design-landing {
-  .section-intro {
-    max-width: 700px;
-    margin-bottom: $spacing-lg;
+// =====================
+// Design Hero
+// =====================
+.design-hero {
+  background: $color-burnt-orange;
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 10vw, 9.375rem);
+  text-align: center;
+}
 
-    h1 {
-      margin-bottom: $spacing-sm;
-    }
+.design-hero__container {
+  max-width: $bp-wide;
+  margin: 0 auto;
+}
 
-    p {
-      color: $color-text-light;
-      font-size: 1.1rem;
+.design-hero__title {
+  font-family: $font-display;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: $color-cream;
+  margin-bottom: $spacing-md;
+}
+
+.design-hero__desc {
+  font-family: $font-condensed;
+  font-size: clamp(1.125rem, 2vw, 1.875rem);
+  color: $color-cream;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// =====================
+// Filter Bar
+// =====================
+.design-filters {
+  background: $color-cream;
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(2rem, 10vw, 9.375rem);
+}
+
+.design-filters__container {
+  max-width: $bp-wide;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.design-filters__pill {
+  font-family: $font-condensed;
+  font-size: clamp(0.875rem, 1.25vw, 1.25rem);
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+
+  background: $color-golden;
+  color: $color-deep-brown;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-deep-brown;
+    outline-offset: 2px;
+  }
+
+  &.is-active {
+    background: $color-deep-brown;
+    color: $color-cream;
+
+    &:focus-visible {
+      outline-color: $color-cream;
     }
+  }
+}
+
+// =====================
+// Project Cards Grid
+// =====================
+.design-grid {
+  background: $color-cream;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 10vw, 9.375rem);
+}
+
+.design-grid__container {
+  max-width: $bp-wide;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+// =====================
+// Design Card
+// =====================
+.design-card {
+  width: calc(50% - clamp(0.75rem, 1.5vw, 1.25rem));
+  display: flex;
+  flex-direction: column;
+}
+
+.design-card__image {
+  border-radius: $card-radius $card-radius 0 0;
+  border: 1px solid $color-deep-brown;
+  border-bottom: none;
+  overflow: hidden;
+  height: 318px;
+  background: $color-placeholder;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.design-card__info {
+  background: $color-deep-brown;
+  border-radius: 0 0 $card-radius $card-radius;
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 2vw, 1.75rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.design-card__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.design-card__name {
+  font-family: $font-display;
+  font-size: clamp(1.25rem, 2vw, 2.2rem);
+  font-weight: 700;
+  color: $color-cream;
+}
+
+.design-card__desc {
+  font-family: $font-condensed;
+  font-size: clamp(0.875rem, 1.25vw, 1.25rem);
+  color: $color-cream;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.design-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.design-card__tag {
+  font-family: $font-condensed;
+  font-size: clamp(0.75rem, 1vw, 1rem);
+  background: $color-golden;
+  color: $color-deep-brown;
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.design-card__arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-cream;
+  transition: opacity 0.2s ease;
+
+  svg {
+    width: 37px;
+    height: 34px;
+    color: $color-cream;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// =====================
+// Responsive
+// =====================
+@media (max-width: $bp-desktop) {
+  .design-card__image {
+    height: 260px;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .design-card {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .design-card__image {
+    height: 240px;
+  }
+
+  .design-filters__container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .design-card__image {
+    height: 200px;
+  }
+
+  .design-card__info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .design-card__arrow {
+    align-self: flex-end;
   }
 }

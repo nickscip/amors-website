@@ -5,8 +5,8 @@
 }
 
 .site-main {
-  min-height: calc(100vh - #{$nav-height} - 100px);
-  padding-top: $nav-height;
+  min-height: calc(100vh - #{$nav-height-new} - 100px);
+  padding-top: $nav-height-new;
 }
 
 .section-page,
@@ -14,4 +14,11 @@
   max-width: $max-width;
   margin: 0 auto;
   padding: $spacing-lg $spacing-md;
+}
+
+@media (max-width: $bp-tablet) {
+  .site-main {
+    padding-top: 70px;
+    min-height: calc(100vh - 70px - 100px);
+  }
 }

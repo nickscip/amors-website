@@ -3,15 +3,36 @@
 {% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
 
 {% block content %}
-<section class="section-page research-landing">
-  <div class="section-intro">
+<section class="research-landing">
+  <div class="research-hero">
     <h1>{{ section.title }}</h1>
     {{ section.content | safe }}
   </div>
-  <div class="card-grid">
-    {% for page in section.pages %}
-      {% include "partials/case-study-card.html" %}
-    {% endfor %}
+
+  {% for page in section.pages %}
+    {% if page.extra.featured is defined and page.extra.featured %}
+      <div class="research-featured">
+        <div class="research-featured__panel">
+          <h2>{{ page.title }}</h2>
+          <hr>
+        </div>
+        <div class="research-featured__text">
+          <p>{{ page.extra.featured_text }}</p>
+          <a href="{{ page.permalink }}" class="btn">Read More</a>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  <div class="research-case-studies">
+    <h2>Case Studies</h2>
+    <div class="card-grid">
+      {% for page in section.pages %}
+        {% if not page.extra.featured %}
+          {% include "partials/case-study-card.html" %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </section>
 {% endblock content %}

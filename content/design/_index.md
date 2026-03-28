@@ -3,6 +3,7 @@ title = "Design"
 sort_by = "weight"
 template = "design/section.html"
 page_template = "design/page.html"
-+++
 
-A selection of design projects spanning UX, visual design, and rapid prototyping.
+[extra]
+description = "This design portfolio highlights my approach to user-centered design and problem-solving. Explore how I apply design thinking to tackle challenges, explore ideas, and create thoughtful solutions."
++++

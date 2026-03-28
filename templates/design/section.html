@@ -3,15 +3,62 @@
 {% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
 
 {% block content %}
-<section class="section-page design-landing">
-  <div class="section-intro">
-    <h1>{{ section.title }}</h1>
-    {{ section.content | safe }}
+
+{# ===== Hero ===== #}
+<section class="design-hero">
+  <div class="design-hero__container">
+    <h1 class="design-hero__title">{{ section.title }}</h1>
+    {% if section.extra.description %}
+    <p class="design-hero__desc">{{ section.extra.description }}</p>
+    {% endif %}
   </div>
-  <div class="card-grid">
+</section>
+
+{# ===== Filter Bar ===== #}
+<section class="design-filters">
+  <div class="design-filters__container">
+    <button class="design-filters__pill is-active" data-filter="all">All Projects</button>
+    <button class="design-filters__pill" data-filter="UX Design">UX Design</button>
+    <button class="design-filters__pill" data-filter="UX Research">UX Research</button>
+    <button class="design-filters__pill" data-filter="UI Design">UI Design</button>
+    <button class="design-filters__pill" data-filter="Illustration">Illustration</button>
+  </div>
+</section>
+
+{# ===== Project Cards Grid ===== #}
+<section class="design-grid">
+  <div class="design-grid__container">
     {% for page in section.pages %}
-      {% include "partials/case-study-card.html" %}
+      {% include "partials/design-card.html" %}
     {% endfor %}
   </div>
 </section>
+
 {% endblock content %}
+
+{% block scripts %}
+<script>
+  (function () {
+    var pills = document.querySelectorAll('.design-filters__pill');
+    var cards = document.querySelectorAll('.design-card');
+
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        pills.forEach(function (p) { p.classList.remove('is-active'); });
+        pill.classList.add('is-active');
+
+        var filter = pill.getAttribute('data-filter');
+
+        cards.forEach(function (card) {
+          if (filter === 'all') {
+            card.style.display = '';
+          } else {
+            var tags = card.getAttribute('data-tags');
+            card.style.display = tags && tags.indexOf(filter) !== -1 ? '' : 'none';
+          }
+        });
+      });
+    });
+  })();
+</script>
+{% endblock scripts %}

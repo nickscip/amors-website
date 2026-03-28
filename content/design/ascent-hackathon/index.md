@@ -8,6 +8,7 @@ role = "UX Designer"
 methodology = "Design Sprint"
 thumbnail = "/images/design/ascent-hackathon-thumb.jpg"
 summary = "1st place winning blockchain solution designed during a company hackathon."
+tags = ["UX Design", "UI Design"]
 +++
 
 Placeholder content for the Ascent Blockchain Hackathon project.

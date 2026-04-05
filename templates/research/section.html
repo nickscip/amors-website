@@ -3,36 +3,60 @@
 {% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
 
 {% block content %}
-<section class="research-landing">
-  <div class="research-hero">
-    <h1>{{ section.title }}</h1>
-    {{ section.content | safe }}
-  </div>
 
-  {% for page in section.pages %}
-    {% if page.extra.featured is defined and page.extra.featured %}
-      <div class="research-featured">
-        <div class="research-featured__panel">
-          <h2>{{ page.title }}</h2>
-          <hr>
-        </div>
-        <div class="research-featured__text">
-          <p>{{ page.extra.featured_text }}</p>
-          <a href="{{ page.permalink }}" class="btn">Read More</a>
-        </div>
-      </div>
+{# ===== Hero ===== #}
+<section class="research-hero">
+  <div class="research-hero__container">
+    <h1 class="research-hero__title">{{ section.title }}</h1>
+    {% if section.extra.description %}
+    <p class="research-hero__desc">{{ section.extra.description }}</p>
     {% endif %}
-  {% endfor %}
-
-  <div class="research-case-studies">
-    <h2>Case Studies</h2>
-    <div class="card-grid">
-      {% for page in section.pages %}
-        {% if not page.extra.featured %}
-          {% include "partials/case-study-card.html" %}
-        {% endif %}
-      {% endfor %}
-    </div>
   </div>
 </section>
+
+{# ===== Filter Bar ===== #}
+<section class="project-filters">
+  <div class="project-filters__container">
+    <button class="project-filters__pill is-active" data-filter="all">All Projects</button>
+    <button class="project-filters__pill" data-filter="UX Design">UX Design</button>
+    <button class="project-filters__pill" data-filter="UX Research">UX Research</button>
+  </div>
+</section>
+
+{# ===== Project Cards Grid ===== #}
+<section class="project-grid">
+  <div class="project-grid__container">
+    {% for page in section.pages %}
+      {% include "partials/project-card.html" %}
+    {% endfor %}
+  </div>
+</section>
+
 {% endblock content %}
+
+{% block scripts %}
+<script>
+  (function () {
+    var pills = document.querySelectorAll('.project-filters__pill');
+    var cards = document.querySelectorAll('.project-card');
+
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        pills.forEach(function (p) { p.classList.remove('is-active'); });
+        pill.classList.add('is-active');
+
+        var filter = pill.getAttribute('data-filter');
+
+        cards.forEach(function (card) {
+          if (filter === 'all') {
+            card.style.display = '';
+          } else {
+            var tags = card.getAttribute('data-tags');
+            card.style.display = tags && tags.indexOf(filter) !== -1 ? '' : 'none';
+          }
+        });
+      });
+    });
+  })();
+</script>
+{% endblock scripts %}

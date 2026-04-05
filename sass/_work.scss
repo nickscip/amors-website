@@ -1,0 +1,15 @@
+// =====================
+// All Work Heading
+// =====================
+.all-work-heading {
+  background: $color-cream;
+  padding: clamp(2rem, 3vw, 2.5rem) clamp(2rem, 10vw, 9.375rem) 0;
+  text-align: center;
+
+  h2 {
+    font-family: $font-display;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: $color-deep-brown;
+  }
+}

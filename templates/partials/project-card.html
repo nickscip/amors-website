@@ -1,0 +1,25 @@
+<article class="project-card" data-tags="{{ page.extra.tags | default(value=[]) | join(sep=',') }}">
+  <div class="project-card__image">
+    {% if page.extra.thumbnail %}
+    <img src="{{ page.extra.thumbnail }}" alt="{{ page.title }}"{% if page.extra.thumbnail_position %} style="object-position: {{ page.extra.thumbnail_position }}"{% endif %} />
+    {% endif %}
+  </div>
+  <div class="project-card__info">
+    <div class="project-card__text">
+      <h3 class="project-card__name">{{ page.title }}</h3>
+      {% if page.extra.summary %}
+      <p class="project-card__desc">{{ page.extra.summary }}</p>
+      {% endif %}
+      {% if page.extra.tags %}
+      <div class="project-card__tags">
+        {% for tag in page.extra.tags %}
+        <span class="project-card__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <a href="{{ page.permalink }}" class="project-card__arrow" aria-label="View {{ page.title }}">
+      {% include "partials/svg/icon-arrow.html" %}
+    </a>
+  </div>
+</article>

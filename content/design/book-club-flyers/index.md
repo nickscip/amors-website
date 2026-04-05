@@ -6,7 +6,7 @@ weight = 3
 client = "Personal"
 role = "Visual Designer"
 methodology = "Visual Design"
-thumbnail = "/images/design/book-club-flyers-thumb.jpg"
+thumbnail = "/images/design/book-club-flyers-thumb.png"
 summary = "Visual design work for book club promotional flyers."
 tags = ["Illustration"]
 +++

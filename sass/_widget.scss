@@ -1,0 +1,193 @@
+// =====================
+// Widget Container
+// =====================
+.widget {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+// =====================
+// Trigger (circle + icon grid + curved text)
+// =====================
+.widget__trigger {
+  position: relative;
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widget__circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: $color-cream;
+}
+
+.widget__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  color: $color-deep-brown;
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.widget__curved-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190px;
+  height: 190px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+
+  text {
+    font-family: $font-display;
+    font-size: 20px;
+    font-weight: 700;
+    fill: $color-deep-brown;
+    stroke: #fff;
+    stroke-width: 4px;
+    paint-order: stroke fill;
+  }
+}
+
+.widget__trigger:hover .widget__curved-text {
+  opacity: 1;
+}
+
+// =====================
+// Panel
+// =====================
+.widget__panel {
+  display: none;
+  position: absolute;
+  bottom: 130px;
+  right: 0;
+  width: 320px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+
+  &.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.widget__section {
+  background: $color-cream;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+// =====================
+// Spotify Player
+// =====================
+.widget__spotify-iframe {
+  width: 100%;
+  height: 152px;
+  border-radius: 12px;
+  display: block;
+}
+
+// =====================
+// Dark Mode Toggle
+// =====================
+.widget__dark-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.widget__dark-label {
+  font-family: $font-condensed;
+  font-size: 1.25rem;
+  color: $color-deep-brown;
+}
+
+.widget__dark-toggle {
+  position: relative;
+  width: 36px;
+  height: 22px;
+  border-radius: 100px;
+  border: none;
+  background: #757728;
+  cursor: pointer;
+  padding: 1px;
+  transition: background 0.2s ease;
+
+  &.is-on {
+    background: $color-deep-brown;
+  }
+}
+
+.widget__dark-knob {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s ease;
+  pointer-events: none;
+
+  .widget__dark-toggle.is-on & {
+    transform: translateX(14px);
+  }
+}
+
+// =====================
+// Responsive
+// =====================
+@media (max-width: $bp-tablet) {
+  .widget {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .widget__trigger {
+    width: 100px;
+    height: 100px;
+  }
+
+  .widget__grid {
+    gap: 6px;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .widget__curved-text {
+    display: none;
+  }
+
+  .widget__panel {
+    bottom: 110px;
+    right: 0;
+    width: calc(100vw - 2rem);
+    max-width: 320px;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .widget {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+}

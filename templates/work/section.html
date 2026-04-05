@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Work | {{ config.title }}{% endblock title %}
+
+{% block content %}
+
+{# ===== Work Hero (reuses home page work-section styles) ===== #}
+<section class="work-section">
+  <div class="work-container">
+    <h2>Work</h2>
+    <div class="work-cards">
+      <div class="work-card">
+        <div class="work-card__icon">
+          <img src="{{ get_url(path='images/home/icon-research.png') }}" alt="" />
+        </div>
+        <div class="work-card__body">
+          <h3>Research</h3>
+          <p>This research portfolio showcases my UX research process. Each study demonstrates the impact of user insights on product decisions, and reflects evolution of my approach to research.</p>
+          <a href="{{ get_url(path='@/research/_index.md') }}" class="btn-cta">View Research Work</a>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-card__icon">
+          <img src="{{ get_url(path='images/home/icon-design.png') }}" alt="" />
+        </div>
+        <div class="work-card__body">
+          <h3>Design</h3>
+          <p>This design portfolio highlights my approach to user-centered design and problem-solving. Explore how I apply design thinking to tackle challenges, explore ideas, and create thoughtful solutions.</p>
+          <a href="{{ get_url(path='@/design/_index.md') }}" class="btn-cta">View Design Work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== All Work Heading ===== #}
+<section class="all-work-heading">
+  <h2>All Work</h2>
+</section>
+
+{# ===== Filter Bar ===== #}
+<section class="project-filters">
+  <div class="project-filters__container">
+    <button class="project-filters__pill is-active" data-filter="all">All Projects</button>
+    <button class="project-filters__pill" data-filter="UX Design">UX Design</button>
+    <button class="project-filters__pill" data-filter="UX Research">UX Research</button>
+    <button class="project-filters__pill" data-filter="UI Design">UI Design</button>
+    <button class="project-filters__pill" data-filter="Illustration">Illustration</button>
+  </div>
+</section>
+
+{# ===== Project Cards Grid ===== #}
+<section class="project-grid">
+  <div class="project-grid__container">
+    {% set research = get_section(path="research/_index.md") %}
+    {% set design = get_section(path="design/_index.md") %}
+    {% for page in research.pages %}
+      {% include "partials/project-card.html" %}
+    {% endfor %}
+    {% for page in design.pages %}
+      {% include "partials/project-card.html" %}
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+  (function () {
+    var pills = document.querySelectorAll('.project-filters__pill');
+    var cards = document.querySelectorAll('.project-card');
+
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        pills.forEach(function (p) { p.classList.remove('is-active'); });
+        pill.classList.add('is-active');
+
+        var filter = pill.getAttribute('data-filter');
+
+        cards.forEach(function (card) {
+          if (filter === 'all') {
+            card.style.display = '';
+          } else {
+            var tags = card.getAttribute('data-tags');
+            card.style.display = tags && tags.indexOf(filter) !== -1 ? '' : 'none';
+          }
+        });
+      });
+    });
+  })();
+</script>
+{% endblock scripts %}

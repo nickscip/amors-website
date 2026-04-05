@@ -1,0 +1,207 @@
+// =====================
+// Dark Mode Colors
+// =====================
+$dm-bg: #231811;
+$dm-text: #FFF8E8;
+$dm-cta: #C5D83F;
+$dm-references: #4B3740;
+
+// =====================
+// Dark Mode Overrides
+// =====================
+[data-theme="dark"] {
+
+  // --- Global ---
+  body {
+    background: $dm-bg;
+    color: $dm-text;
+  }
+
+  // --- Navigation ---
+  .main-nav {
+    background: $dm-bg;
+  }
+
+  .nav-logo {
+    color: $dm-text;
+  }
+
+  .nav-toggle {
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+      background: $dm-text;
+    }
+  }
+
+  .nav-item > a {
+    color: $dm-text;
+  }
+
+  .nav-dropdown {
+    background: $dm-bg;
+
+    li a {
+      color: $dm-text;
+    }
+  }
+
+  .nav-search {
+    color: $dm-text;
+  }
+
+  @media (max-width: $bp-tablet) {
+    .nav-menu {
+      background: $dm-bg;
+    }
+  }
+
+  // --- Hero (Home) ---
+  .hero {
+    background: $dm-bg;
+  }
+
+  .hero-text {
+    h1, p {
+      color: $dm-text;
+    }
+  }
+
+  // --- Work Section (Home + Work page hero) ---
+  // Olive background stays the same
+  .work-card__body {
+    background: $dm-bg;
+
+    h3, p {
+      color: $dm-text;
+    }
+  }
+
+  .work-card__icon {
+    background: $dm-cta;
+    color: $dm-bg;
+  }
+
+  .btn-cta {
+    background: $dm-cta;
+    color: $dm-bg;
+  }
+
+  // --- Brands Section ---
+  .brands-section {
+    background: $dm-bg;
+  }
+
+  // --- References Section ---
+  .references-section {
+    background: $dm-references;
+  }
+
+  .ref-card {
+    background: $dm-bg;
+
+    blockquote p {
+      color: $dm-text;
+    }
+  }
+
+  .ref-card__name,
+  .ref-card__title {
+    color: $dm-text;
+  }
+
+  // --- More Fun Section ---
+  .more-section {
+    background: $dm-bg;
+  }
+
+  .more-card__info {
+    .more-card__text {
+      h3, p {
+        color: $dm-bg;
+      }
+    }
+  }
+
+  .more-card__arrow {
+    color: $dm-bg;
+  }
+
+  // --- Footer ---
+  .site-footer {
+    background: $dm-bg;
+  }
+
+  .footer-name,
+  .footer-contact,
+  .footer-heading,
+  .footer-sublink {
+    color: $dm-text;
+  }
+
+  .social-icon {
+    color: $dm-text;
+  }
+
+  // --- Project Filters (Research, Design, Work pages) ---
+  .project-filters {
+    background: $dm-bg;
+  }
+
+  .project-filters__pill {
+    background: $dm-cta;
+
+    &.is-active {
+      background: $dm-text;
+      color: $dm-bg;
+    }
+  }
+
+  .project-card__tag {
+    background: $dm-cta;
+  }
+
+  // --- Project Grid ---
+  .project-grid {
+    background: $dm-bg;
+  }
+
+  // --- All Work Heading ---
+  .all-work-heading {
+    background: $dm-bg;
+
+    h2 {
+      color: $dm-text;
+    }
+  }
+
+  // --- Research Hero ---
+  // Olive stays the same
+
+  // --- Design Hero ---
+  .design-hero {
+    background: $dm-references;
+  }
+
+  // --- Widget ---
+  .widget__circle {
+    background: $dm-cta;
+  }
+
+  .widget__grid {
+    color: $dm-bg;
+  }
+
+  .widget__curved-text text {
+    fill: $dm-text;
+    stroke: $dm-bg;
+  }
+
+  .widget__section {
+    background: $dm-cta;
+  }
+
+  .widget__dark-label {
+    color: $dm-bg;
+  }
+}

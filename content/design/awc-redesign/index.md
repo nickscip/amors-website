@@ -6,7 +6,7 @@ weight = 2
 client = "Animal Welfare Coalition"
 role = "UX Designer"
 methodology = "End-to-End Redesign"
-thumbnail = "/images/design/awc-redesign-thumb.jpg"
+thumbnail = "/images/design/awc-redesign-thumb.png"
 summary = "Complete redesign of the Animal Welfare Coalition's digital presence."
 tags = ["UX Design", "UI Design"]
 +++

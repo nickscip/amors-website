@@ -6,8 +6,10 @@ weight = 1
 client = "Verizon"
 role = "UX Researcher"
 methodology = "A/B/C Testing"
-thumbnail = "/images/research/unauthenticated-support-thumb.jpg"
+thumbnail = "/images/research/unauthenticated-support-thumb.png"
+thumbnail_position = "center 32%"
 summary = "I worked on revamping Verizon's unauthenticated Support page to make it easier for people to find the support tools and information they need, such as network status, and troubleshooting. In this study, I tested three redesigned versions to see which one best matched how users think and navigate when they're looking for support."
+tags = ["UX Research"]
 hero_html = """
 <p>During my time as the Support portfolio lead at Verizon, one of the projects I'm most proud of was a multi-phase research initiative to guide the redesign of the Support landing page on the Verizon website.</p>
 <p>Prior to the A/B/C test in this case study, I started with usability testing on the existing page (at the time) to understand where people were getting stuck. The findings were clear: once users landed on the page, many were unsure where to begin and struggled to find a clear starting point. To reimagine the experience, I then led a co-design study to explore what an ideal support journey might look like. Across sessions, participants consistently organized support content by Verizon service type, such as Mobile or Home/Internet. That insight gave us a strong direction for how to structure the page.</p>

@@ -6,8 +6,9 @@ weight = 4
 client = "Ascent"
 role = "UX Researcher"
 methodology = "Mixed Methods"
-thumbnail = "/images/research/internal-service-desk-thumb.jpg"
+thumbnail = "/images/research/internal-service-desk-thumb.png"
 summary = "At Ascent Global Logistics, I led foundational research to understand why users were frustrated with the internal Service Desk platform. My goal was to uncover the root causes and provide clear, actionable insights. The findings helped shape the roadmap for a more efficient, user-friendly support experience."
+tags = ["UX Research", "UX Design"]
 +++
 
 Placeholder content for the Internal Service Desk Research case study.

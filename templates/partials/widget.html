@@ -1,0 +1,95 @@
+<div class="widget" id="widget">
+  <div class="widget__trigger" id="widget-trigger">
+    {# Curved text (visible on hover) #}
+    <svg class="widget__curved-text" viewBox="0 0 190 190" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <path id="widget-arc" d="M 10,140 A 85,85 0 0,1 180,140" fill="none" />
+      </defs>
+      <text>
+        <textPath href="#widget-arc" startOffset="50%" text-anchor="middle">Click me for a good time</textPath>
+      </text>
+    </svg>
+
+    {# Circle background #}
+    <div class="widget__circle"></div>
+
+    {# 2x2 icon grid #}
+    <div class="widget__grid">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26.9583 20.8533V6.855C26.9583 2.5075 24.985 0.75 20.0825 0.75H7.62583C2.72333 0.75 0.75 2.5075 0.75 6.855V20.8225C0.75 25.2008 2.72333 26.9275 7.62583 26.9275H20.0825C24.985 26.9583 26.9583 25.2008 26.9583 20.8533Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26.9583 20.8533V6.855C26.9583 2.5075 24.985 0.75 20.0825 0.75H7.62583C2.72333 0.75 0.75 2.5075 0.75 6.855V20.8225C0.75 25.2008 2.72333 26.9275 7.62583 26.9275H20.0825C24.985 26.9583 26.9583 25.2008 26.9583 20.8533Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26.9583 20.0825V7.62583C26.9583 2.72333 24.985 0.75 20.0825 0.75H7.62583C2.72333 0.75 0.75 2.72333 0.75 7.62583V20.0825C0.75 24.985 2.72333 26.9583 7.62583 26.9583H20.0825C24.985 26.9583 26.9583 24.985 26.9583 20.0825Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26.9583 20.0825V7.62583C26.9583 2.72333 24.985 0.75 20.0825 0.75H7.62583C2.72333 0.75 0.75 2.72333 0.75 7.62583V20.0825C0.75 24.985 2.72333 26.9583 7.62583 26.9583H20.0825C24.985 26.9583 26.9583 24.985 26.9583 20.0825Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  {# Panel (shown on click) #}
+  <div class="widget__panel" id="widget-panel">
+    {# Spotify player #}
+    {%- if config.extra.spotify_playlist_id %}
+    <div class="widget__section">
+      <iframe
+        class="widget__spotify-iframe"
+        src="https://open.spotify.com/embed/playlist/{{ config.extra.spotify_playlist_id }}?utm_source=generator&theme=0"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        title="Spotify Player"
+      ></iframe>
+    </div>
+    {%- endif %}
+
+    {# Dark mode toggle #}
+    <div class="widget__section">
+      <div class="widget__dark-row">
+        <span class="widget__dark-label">Dark Mode</span>
+        <button class="widget__dark-toggle" id="widget-dark-toggle" aria-label="Toggle dark mode">
+          <span class="widget__dark-knob"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Dark mode
+  var darkToggle = document.getElementById('widget-dark-toggle');
+  var html = document.documentElement;
+
+  function applyTheme(dark) {
+    html.setAttribute('data-theme', dark ? 'dark' : 'light');
+    darkToggle.classList.toggle('is-on', dark);
+  }
+
+  applyTheme(localStorage.getItem('theme') === 'dark');
+
+  darkToggle.addEventListener('click', function () {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    applyTheme(!isDark);
+  });
+
+  // Widget toggle
+  var trigger = document.getElementById('widget-trigger');
+  var panel = document.getElementById('widget-panel');
+
+  trigger.addEventListener('click', function () {
+    panel.classList.toggle('is-open');
+  });
+
+  document.addEventListener('click', function (e) {
+    var widget = document.getElementById('widget');
+    if (!widget.contains(e.target)) {
+      panel.classList.remove('is-open');
+    }
+  });
+})();
+</script>

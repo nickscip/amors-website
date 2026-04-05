@@ -6,7 +6,7 @@ weight = 1
 client = "Ascent"
 role = "UX Designer"
 methodology = "Design Sprint"
-thumbnail = "/images/design/ascent-hackathon-thumb.jpg"
+thumbnail = "/images/design/ascent-hackathon-thumb.png"
 summary = "1st place winning blockchain solution designed during a company hackathon."
 tags = ["UX Design", "UI Design"]
 +++

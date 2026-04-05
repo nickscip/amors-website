@@ -1,229 +1,30 @@
+// =====================
+// Research Hero
+// =====================
 .research-hero {
+  background: $color-olive;
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 10vw, 9.375rem);
   text-align: center;
-  padding: $spacing-xl $spacing-md;
-  max-width: $max-width;
+}
+
+.research-hero__container {
+  max-width: $bp-wide;
   margin: 0 auto;
-
-  h1 {
-    font-family: $font-heading;
-    font-size: 4.5rem;
-    font-weight: 400;
-    margin-bottom: $spacing-md;
-  }
-
-  p {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: $color-text-light;
-  }
 }
 
-.research-featured {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: $max-width;
-  margin: 0 auto $spacing-xl;
-  padding: 0 $spacing-md;
+.research-hero__title {
+  font-family: $font-display;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: $color-cream;
+  margin-bottom: $spacing-md;
 }
 
-.research-featured__panel {
-  background: $color-accent;
-  padding: $spacing-xl;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  h2 {
-    font-family: $font-heading;
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: #ffffff;
-    margin-bottom: $spacing-sm;
-  }
-
-  hr {
-    border: none;
-    width: 60px;
-    height: 2px;
-    background: #ffffff;
-    margin: 0;
-  }
-}
-
-.research-featured__text {
-  padding: $spacing-xl;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: $color-text;
-    margin-bottom: $spacing-md;
-  }
-
-  .btn {
-    display: inline-block;
-    background: $color-primary;
-    color: #ffffff;
-    padding: 0.75rem 2rem;
-    font-size: 0.95rem;
-    text-align: center;
-    transition: opacity 0.2s ease;
-    align-self: flex-start;
-
-    &:hover {
-      opacity: 0.85;
-    }
-  }
-}
-
-.research-case-studies {
-  max-width: $max-width;
+.research-hero__desc {
+  font-family: $font-condensed;
+  font-size: clamp(1.125rem, 2vw, 1.875rem);
+  color: $color-cream;
+  line-height: 1.5;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 $spacing-md $spacing-xl;
-
-  > h2 {
-    font-family: $font-heading;
-    font-size: 3rem;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: $spacing-lg;
-  }
-}
-
-// Process Overview page
-.process-overview {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: $spacing-lg $spacing-md;
-}
-
-.process-hero {
-  background: $color-sage-light;
-  text-align: center;
-  border-radius: 8px;
-  padding: $spacing-xl;
-  margin-bottom: $spacing-xl;
-
-  h1 {
-    font-family: $font-heading;
-    font-size: 3.5rem;
-    font-weight: 400;
-    margin-bottom: $spacing-md;
-  }
-
-  p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: $spacing-sm;
-  }
-
-  ol {
-    list-style: decimal;
-    display: inline-block;
-    text-align: left;
-    padding-left: $spacing-md;
-
-    li {
-      margin-bottom: $spacing-xs;
-    }
-
-    a {
-      text-decoration: underline;
-      color: $color-text;
-
-      &:hover {
-        color: $color-accent;
-      }
-    }
-  }
-}
-
-.process-body {
-  max-width: 900px;
-  margin: 0 auto;
-
-  h2 {
-    font-family: $font-heading;
-    font-size: 2.5rem;
-    font-weight: 400;
-    text-align: center;
-    margin-top: $spacing-xl;
-    margin-bottom: $spacing-md;
-  }
-
-  p {
-    margin-bottom: $spacing-sm;
-    line-height: 1.7;
-  }
-
-  ul, ol {
-    margin-bottom: $spacing-sm;
-    padding-left: $spacing-md;
-    list-style: disc;
-
-    li {
-      margin-bottom: $spacing-xs;
-      line-height: 1.7;
-    }
-  }
-
-  ol {
-    list-style: decimal;
-  }
-
-  a {
-    text-decoration: underline;
-    color: $color-text;
-
-    &:hover {
-      color: $color-accent;
-    }
-  }
-}
-
-@media (max-width: $bp-tablet) {
-  .research-hero {
-    padding: $spacing-lg $spacing-md;
-
-    h1 {
-      font-size: 2.75rem;
-    }
-  }
-
-  .research-featured {
-    grid-template-columns: 1fr;
-  }
-
-  .research-featured__panel {
-    padding: $spacing-lg;
-
-    h2 {
-      font-size: 2rem;
-    }
-  }
-
-  .research-featured__text {
-    padding: $spacing-lg;
-  }
-
-  .research-case-studies > h2 {
-    font-size: 2.25rem;
-  }
-
-  .process-hero {
-    padding: $spacing-lg;
-
-    h1 {
-      font-size: 2.5rem;
-    }
-  }
-
-  .process-body h2 {
-    font-size: 2rem;
-  }
 }
